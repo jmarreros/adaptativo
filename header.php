@@ -25,37 +25,54 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<div class="site-branding">
+		<div class="container">
+			<div class="row header-top">
 
-				<div class ="container">
+				<div class="col-4">
+						<?php the_custom_logo(); ?>
+						<div class="site-branding">
+								<?php
+								if ( is_front_page() && is_home() ) : ?>
+									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<?php else : ?>
+									<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+								<?php
+								endif;
 
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
+								$description = get_bloginfo( 'description', 'display' );
+								if ( $description || is_customize_preview() ) : ?>
+									<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+								<?php
+								endif; ?>
+						</div><!-- .site-branding -->
+				</div>
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!--container-->
+				<div class="col-8">
 
-		</div><!-- .site-branding -->
+					<nav id="site-navigation" class="main-navigation" role="navigation">
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#9776; <?php esc_html_e( 'Menu', 'adaptativo' ); ?></button>
+							<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
-			<div class="container">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#9776; <?php esc_html_e( 'Menu', 'adaptativo' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-			</div><!--container-->
+					</nav><!-- #site-navigation -->
 
-		</nav><!-- #site-navigation -->
+				</div>
 
+			</div><!-- row -->
 
+			<?php if ( is_home() && is_active_sidebar('header-home') ): ?>
+				<div class='row header-home'>
+					<?php dynamic_sidebar( 'header-home' ); ?>
+				</div>
+			<?php endif; ?>
+
+			<?php if ( is_active_sidebar('header-bottom') ): ?>
+				<div class='row header-bottom'>
+					<?php dynamic_sidebar( 'header-bottom' ); ?>
+				</div>
+			<?php endif; ?>
+
+		</div><!-- container -->
 
 	</header><!-- #masthead -->
 

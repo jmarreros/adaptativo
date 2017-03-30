@@ -1,4 +1,41 @@
 
-body{
-    background-color:white;
+.site-title{
+  margin:auto;
+  font-family: $font3;
+  font-weight: 500;
+  font-size: 1.8em;
+  text-align: center;
+  text-transform: uppercase;
+
+  a{
+    width:100%;
+    display: block;
+    color:$gris-medio;
+    text-decoration: none;
+  }
+
+}
+
+.site-description{
+  margin:auto;
+  font-family: $font3;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+header.site-header{
+  background: url('img/background-header.jpg');
+}
+
+.header-home{
+  text-align: center;
+  min-height: 500px;
+  color:white;
+  font-size: 1.6em;
+}
+
+.header-top{
+  margin-bottom: 60px;
+  border-bottom: 1px dotted gray;
 }

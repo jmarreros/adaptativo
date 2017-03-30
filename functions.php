@@ -67,9 +67,15 @@ function adaptativo_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array( 'header-text' => array( 'site-title', 'site-description' ) ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'adaptativo_setup' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -98,6 +104,27 @@ function adaptativo_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Home', 'adaptativo' ),
+		'id'            => 'header-home',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Bottom', 'adaptativo' ),
+		'id'            => 'header-bottom',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'adaptativo_widgets_init' );
 
@@ -108,7 +135,7 @@ function adaptativo_scripts() {
 
 	//styles
 	wp_enqueue_style( 'adaptativo-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'adaptativo-gfont', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Raleway' );
+	wp_enqueue_style( 'adaptativo-gfont', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Raleway' );
 
 	//scripts
 	wp_enqueue_script( 'adaptativo-jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), '3.2.1', true );

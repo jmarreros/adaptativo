@@ -3,42 +3,10 @@ body{
 }
 
 .container{
-  max-width: 1200px;
+  max-width: 1240px;
   min-width: 360px;
-  margin: auto;
 }
 
-
-.site-branding{
-  padding:24px;
-}
-
-.site-title{
-  margin:auto;
-  font-family: $font3;
-  font-weight: 500;
-  font-size: 2.4em;
-  text-align: center;
-  text-transform: uppercase;
-
-  a{
-    width:100%;
-    display: block;
-    color:$gris-medio;
-    text-decoration: none;
-  }
-
-}
-
-.site-description{
-  margin:auto;
-  font-family: $font3;
-  text-align: center;
-  font-weight: 300;
-  font-size: 1em;
-}
-
-
-header .main-navigation{
-  border-top:1px solid $gris-claro;
+a{
+  color:$colorprincipal;
 }
