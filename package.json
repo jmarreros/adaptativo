@@ -1,0 +1,24 @@
+{
+  "name": "adaptativo",
+  "version": "1.0.0",
+  "description": "Theme WordPress",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmarreros/adaptativo.git"
+  },
+  "author": "",
+  "license": "MTI",
+  "bugs": {
+    "url": "https://github.com/jmarreros/adaptativo/issues"
+  },
+  "homepage": "https://github.com/jmarreros/adaptativo#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
