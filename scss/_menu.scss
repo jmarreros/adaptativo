@@ -1,5 +1,13 @@
 .main-navigation{
 
+  button.menu-toggle{
+    width: 100%;
+    padding:12px;
+    font-size: 1.2em;
+    background-color: rgba(white,.8);
+    border-radius: 0;
+  }
+
   ul{
     float:right;
 
@@ -10,11 +18,19 @@
 
       li{
 
+        &.current-menu-item {
+          a:before{
+              content:"\276f";
+              display: inline-block;
+              margin-right:10px;
+            }
+        }
+                
         a{
           padding: 15px;
           display: block;
           color:$gris-claro;
-          border-bottom: 1px solid #f0f0f0;
+          border-bottom: 1px solid $gris-muyclaro;
           font-family: $font2;
 
           &:hover{
@@ -38,17 +54,25 @@
   {
     margin:5px;
     padding:15px 30px 26px 0px;
+    float: none;
+    display: inline-block;
 
-    &.current-menu-item > a{
-        color:$colorprincipal;
+    &.current-menu-item ,
+    &.current-menu-parent{
 
-        &:after{
-          content:"";
-          margin-top:10px;
-          display: block;
-          border-top:4px solid $colorprincipal;
+      > a{
+            color:$colorprincipal;
+
+            &:after{
+              content:"";
+              margin-top:10px;
+              display: block;
+              border-top:4px solid $colorprincipal;
+            }
         }
+
     }
+
 
     > a{
       font-family: $font1;
@@ -64,4 +88,106 @@
     }
   }
 
-}
+} // main-navigation
+
+
+
+@media (max-width:598px){
+
+  .main-navigation {
+
+    ul{
+      width: 100%;
+      background-color: white;
+
+      ul{
+        border-top: none;
+      }
+
+    } //ul
+
+    .nav-menu > li{
+      padding:10px 8px;
+      display:block;
+      position:static;
+      border-bottom: 1px solid $gris-muyclaro;
+
+      &.current-menu-item,
+      &.current-menu-parent{
+
+        > a{
+            &:after{
+              border:none;
+            }
+        }
+
+      }
+
+      > a{
+        display: block;
+        color:$gris-claro;
+      }
+
+    } //.nav-menu > li
+
+
+    //Sub-menus
+    li ul{
+      position: static;
+      box-shadow: none;
+      margin:16px 6px;
+
+      li{
+
+        width: 100%;
+
+        a{
+          font-size: .9em;
+          display: block;
+          width: 100%;
+          padding: 10px 8px;
+
+          &:hover{
+            background-color: transparent;
+            color:$gris-medio;
+          }
+        } //a
+
+        // &.current_page_item{
+        //
+        //   a{
+        //     // color:$gris-oscuro;
+        //     //
+        //     // &:before{
+        //     //   content:"\276f";
+        //     //   display: inline-block;
+        //     //   margin-right:10px;
+        //     // }
+        //
+        //   }
+        //
+        // } //&.current_page_item
+
+      } //li
+
+    } //li ul
+
+
+  } //main-navigation
+
+}// @media
+
+
+
+// .nav-more{
+//   display: block;
+//   position: absolute;
+//   cursor:pointer;
+//   top:0;
+//   right:0;
+//   font-weight: bold;
+//   font-size: 20px;
+//   &:hover{
+//     color:$colorprincipal;
+//   }
+// }
