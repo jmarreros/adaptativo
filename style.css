@@ -1097,13 +1097,41 @@ header.site-header {
 
 .header-top {
   margin-bottom: 60px;
-  border-bottom: 1px dotted gray; }
+  border-bottom: 1px dotted rgba(92, 92, 92, 0.5); }
+
+.main-navigation ul {
+  float: right; }
+  .main-navigation ul ul {
+    top: 3em;
+    background-color: white;
+    border-top: 4px solid #ffcc00; }
+    .main-navigation ul ul li a {
+      padding: 15px;
+      display: block;
+      color: #999;
+      border-bottom: 1px solid #f0f0f0;
+      font-family: "Raleway", sans-serif; }
+      .main-navigation ul ul li a:hover {
+        color: #5c5c5c;
+        background-color: #ffcc00; }
+    .main-navigation ul ul li:last-child a {
+      border-bottom: none; }
 
 .main-navigation .nav-menu > li {
-  margin: 5px; }
+  margin: 5px;
+  padding: 15px 30px 26px 0px; }
+  .main-navigation .nav-menu > li.current-menu-item > a {
+    color: #ffcc00; }
+    .main-navigation .nav-menu > li.current-menu-item > a:after {
+      content: "";
+      margin-top: 10px;
+      display: block;
+      border-top: 4px solid #ffcc00; }
   .main-navigation .nav-menu > li > a {
     font-family: "Roboto Condensed", sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 1em;
     color: white; }
+    .main-navigation .nav-menu > li > a:hover {
+      color: #ffcc00; }
