@@ -8,6 +8,37 @@ body {
 a {
   color: #ffcc00; }
 
+.rounded {
+  border-radius: 50%; }
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative; }
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a; }
+
+blockquote cite {
+  color: #999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px; }
+
+blockquote cite:before {
+  content: "\2014 \2009"; }
+
 .site-title {
   margin: auto;
   font-family: "Helvetica", sans-serif;
@@ -28,14 +59,33 @@ a {
   font-weight: 300;
   font-size: 1em; }
 
-.header-home {
-  text-align: center;
+.header-bottom,
+.home-header-bottom {
+  padding: 20px;
+  padding-bottom: 80px;
   min-height: 500px;
+  text-align: center;
   color: white;
   font-size: 1.6em; }
+  .header-bottom h1, .header-bottom h2, .header-bottom h3, .header-bottom h4,
+  .home-header-bottom h1,
+  .home-header-bottom h2,
+  .home-header-bottom h3,
+  .home-header-bottom h4 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.8em; }
+  .header-bottom h3, .header-bottom h4,
+  .home-header-bottom h3,
+  .home-header-bottom h4 {
+    font-size: 1em; }
+
+.header-bottom {
+  padding: 20px;
+  min-height: auto;
+  text-align: left; }
 
 .header-top {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   border-bottom: 1px dotted rgba(92, 92, 92, 0.5); }
 
 .custom-logo-link {
@@ -124,3 +174,13 @@ a {
         .main-navigation li ul li a:hover {
           background-color: transparent;
           color: #5c5c5c; } }
+
+.content-top,
+.home-content-top {
+  padding: 20px;
+  margin-top: -2.5em;
+  background-color: #EAEAEA;
+  color: #5c5c5c; }
+  .content-top section,
+  .home-content-top section {
+    margin: 0; }

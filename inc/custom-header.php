@@ -18,7 +18,7 @@
  */
 function adaptativo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'adaptativo_custom_header_args', array(
-		'default-image'          => '../img/background-header.jpg',
+		'default-image'          => get_template_directory_uri().'/img/background-header.jpg',
 		'default-text-color'     => '#ff0000',
 		'wp-head-callback'       => 'adaptativo_header_style',
 	) ) );
@@ -26,57 +26,65 @@ function adaptativo_custom_header_setup() {
 add_action( 'after_setup_theme', 'adaptativo_custom_header_setup' );
 
 if ( ! function_exists( 'adaptativo_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog.
- *
- * @see adaptativo_custom_header_setup().
- */
-function adaptativo_header_style() {
-
-	$header_text_color = get_header_textcolor();
-
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+	/**
+	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @see adaptativo_custom_header_setup().
 	 */
-	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-		return;
+	function adaptativo_header_style() {
+		adaptativo_header_image();
+		adaptativo_header_text_color();
 	}
 
+	function adaptativo_header_image(){
 
-	// color link
-	$color_theme = get_theme_mod('color_theme_settings');
-?>
-	<style type="text/css">
-		body{
-			background-color: <?php echo $color_theme; ?>
+		if ( has_header_image() ){
+			$header_image = get_header_image();
 		}
-	</style>
-	<?php
-
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
+		else{
+			$header_image = get_theme_support( 'custom-header', 'default-image' );
 		}
 
-	<?php
-		// If the user has set a custom color for the text use that.
-		else :
-	?>
-		.site-title a,
-		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
+		?>
+		<style type="text/css">
+			header.site-header{
+				background: url(<?php echo $header_image; ?>);
+			}
+		</style>
+		<?php
+	} //apaptativo header image
+
+	function adaptativo_header_text_color(){
+		$header_text_color = get_header_textcolor();
+
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
 		}
-	<?php endif; ?>
-	</style>
-	<?php
-}
+
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
+			// Has the text been hidden?
+			if ( ! display_header_text() ) :
+		?>
+			.site-title,
+			.site-description {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+
+		<?php
+			// If the user has set a custom color for the text use that.
+			else :
+		?>
+			.site-title a,
+			.site-description {
+				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			}
+		<?php endif; ?>
+		</style>
+		<?php
+	} //adaptativo text color
+
 endif;

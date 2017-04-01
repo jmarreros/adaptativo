@@ -7,11 +7,13 @@
  * @package Adaptativo
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
+
+require_once get_template_directory().'/inc/helper.php';
+
+if ( ! has_sidebar() ) return;
+
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="widget-area col-4" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

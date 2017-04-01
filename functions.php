@@ -60,10 +60,10 @@ function adaptativo_setup() {
 	) );
 
 	// // Set up the WordPress core custom background feature.
-	// add_theme_support( 'custom-background', apply_filters( 'adaptativo_custom_background_args', array(
-	// 	'default-color' => 'ffffff',
-	// 	'default-image' => '',
-	// ) ) );
+	add_theme_support( 'custom-background', apply_filters( 'adaptativo_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 
 
 	// Add theme support for selective refresh for widgets.
@@ -107,8 +107,8 @@ function adaptativo_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Header Home', 'adaptativo' ),
-		'id'            => 'header-home',
+		'name'          => esc_html__( 'Home header bottom', 'adaptativo' ),
+		'id'            => 'home-header-bottom',
 		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -117,8 +117,49 @@ function adaptativo_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Header Bottom', 'adaptativo' ),
+		'name'          => esc_html__( 'Home content top', 'adaptativo' ),
+		'id'            => 'home-content-top',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home content bottom', 'adaptativo' ),
+		'id'            => 'home-content-bottom',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header bottom', 'adaptativo' ),
 		'id'            => 'header-bottom',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Content top', 'adaptativo' ),
+		'id'            => 'content-top',
+		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Content bottom', 'adaptativo' ),
+		'id'            => 'content-bottom',
 		'description'   => esc_html__( 'Add widgets here.', 'adaptativo' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

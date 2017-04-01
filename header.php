@@ -9,6 +9,8 @@
  * @package Adaptativo
  */
 
+ require_once get_template_directory().'/inc/helper.php';
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -60,22 +62,38 @@
 
 			</div><!-- row -->
 
-			<?php if ( is_home() && is_active_sidebar('header-home') ): ?>
-				<div class='row header-home'>
-					<?php dynamic_sidebar( 'header-home' ); ?>
-				</div>
-			<?php endif; ?>
+				<!-- home header bottom -->
+				<?php if ( is_my_home() && is_active_sidebar('home-header-bottom') ): ?>
+					<div class='row home-header-bottom'>
+						<?php dynamic_sidebar( 'home-header-bottom' ); ?>
+					</div>
+				<?php endif; ?>
 
-			<?php if ( is_active_sidebar('header-bottom') ): ?>
-				<div class='row header-bottom'>
-					<?php dynamic_sidebar( 'header-bottom' ); ?>
-				</div>
-			<?php endif; ?>
+				<?php if ( ! is_my_home()  && is_active_sidebar('header-bottom') ): ?>
+					<div class='row header-bottom'>
+						<?php dynamic_sidebar( 'header-bottom' ); ?>
+					</div>
+				<?php endif; ?>
+				<!-- Fin home header bottom -->
+
 
 		</div><!-- container -->
 
-
-
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<!-- Content-top -->
+	<?php if ( is_my_home() &&  is_active_sidebar('home-content-top') ): ?>
+		<div class="container home-content-top">
+				<?php dynamic_sidebar( 'home-content-top' ); ?>
+		</div>
+	<?php endif; ?>
+
+	<?php if ( ! is_my_home() &&  is_active_sidebar('content-top') ): ?>
+		<div class="container content-top">
+				<?php dynamic_sidebar( 'content-top' ); ?>
+		</div>
+	<?php endif; ?>
+	<!-- Fin content-top -->
+
+	<div id="content" class="container site-content">
+		<div class="row">

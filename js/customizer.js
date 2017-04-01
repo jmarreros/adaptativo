@@ -20,8 +20,6 @@
 		} );
 	} );
 
-
-
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
@@ -39,15 +37,6 @@
 					'color': to
 				} );
 			}
-		} );
-	} );
-
-	//Theme color
-	wp.customize( 'color_theme_settings', function( value ) {
-		value.bind( function( to ) {
-			$('.current-menu-item a').css({
-				'color':to
-			})
 		} );
 	} );
 
