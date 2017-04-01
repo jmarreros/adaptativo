@@ -44,7 +44,8 @@ function adaptativo_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'adaptativo' ),
+		'menu-1' => esc_html__( 'Main menu', 'adaptativo' ),
+		'menu-2' => esc_html__( 'Menu footer', 'adaptativo' )
 	) );
 
 	/*
@@ -61,7 +62,7 @@ function adaptativo_setup() {
 
 	// // Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'adaptativo_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'f2f2f2',
 		'default-image' => '',
 	) ) );
 

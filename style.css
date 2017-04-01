@@ -1057,7 +1057,9 @@ object {
 /* ==== Fin Grid ==== */
 
 body {
-  color: #5c5c5c; }
+  color: #5c5c5c;
+  font-family: "Raleway", sans-serif;
+  background-color: #F2F2F2; }
 
 .container {
   max-width: 1240px;
@@ -1117,11 +1119,12 @@ blockquote cite:before {
   font-weight: 300;
   font-size: 1em; }
 
+header.site-header {
+  padding-bottom: 80px; }
+
 .header-bottom,
 .home-header-bottom {
   padding: 20px;
-  padding-bottom: 80px;
-  min-height: 500px;
   text-align: center;
   color: white;
   font-size: 1.6em; }
@@ -1233,12 +1236,86 @@ blockquote cite:before {
           background-color: transparent;
           color: #5c5c5c; } }
 
+.wrap-content {
+  margin-top: -60px;
+  margin-bottom: -60px;
+  position: relative;
+  z-index: 1; }
+  .wrap-content .content-area {
+    padding: 20px; }
+
 .content-top,
-.home-content-top {
+.home-content-top,
+.content-bottom,
+.home-content-bottom {
   padding: 20px;
-  margin-top: -2.5em;
   background-color: #EAEAEA;
   color: #5c5c5c; }
   .content-top section,
-  .home-content-top section {
+  .home-content-top section,
+  .content-bottom section,
+  .home-content-bottom section {
     margin: 0; }
+  .content-top h1, .content-top h2, .content-top h3, .content-top h4,
+  .home-content-top h1,
+  .home-content-top h2,
+  .home-content-top h3,
+  .home-content-top h4,
+  .content-bottom h1,
+  .content-bottom h2,
+  .content-bottom h3,
+  .content-bottom h4,
+  .home-content-bottom h1,
+  .home-content-bottom h2,
+  .home-content-bottom h3,
+  .home-content-bottom h4 {
+    margin-top: 5px; }
+
+.site-content {
+  background: white; }
+  .site-content.sidebar #primary {
+    width: 78%;
+    float: left; }
+  .site-content.sidebar #secondary {
+    width: 20%;
+    float: right; }
+  .site-content.sidebar:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+@media (max-width: 768px) {
+  .site-content.sidebar #primary, .site-content.sidebar #secondary {
+    width: 100%; } }
+
+footer.site-footer {
+  background-color: #1D1D1D;
+  padding: 100px 20px 20px;
+  font-size: .9em; }
+  footer.site-footer a {
+    color: #5c5c5c;
+    text-decoration: none; }
+    footer.site-footer a:hover {
+      color: #ffcc00; }
+  footer.site-footer .menu {
+    margin: 0;
+    padding: 0;
+    text-align: right; }
+    footer.site-footer .menu li {
+      display: inline-block; }
+      footer.site-footer .menu li a {
+        color: #999; }
+        footer.site-footer .menu li a:hover {
+          color: #ffcc00; }
+      footer.site-footer .menu li ul {
+        display: none; }
+      footer.site-footer .menu li:not(:last-child):after {
+        content: " | ";
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 8px; }
+
+@media (max-width: 768px) {
+  footer.site-footer .menu {
+    margin-top: 16px;
+    text-align: left; } }

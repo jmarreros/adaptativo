@@ -24,19 +24,16 @@
   font-size: 1em;
 }
 
-// header.site-header{
-//   background: url('img/background-header.jpg');
-// }
+header.site-header{
+  padding-bottom: 80px;
+}
 
 .header-bottom,
 .home-header-bottom{
   padding: 20px;
-  padding-bottom: 80px;
-  min-height: 500px;
   text-align: center;
   color:white;
   font-size: 1.6em;
-
 
   h1, h2, h3, h4{
     font-family: $font2;

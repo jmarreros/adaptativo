@@ -81,6 +81,8 @@
 
 	</header><!-- #masthead -->
 
+
+  <div class="wrap-content">
 	<!-- Content-top -->
 	<?php if ( is_my_home() &&  is_active_sidebar('home-content-top') ): ?>
 		<div class="container home-content-top">
@@ -95,5 +97,4 @@
 	<?php endif; ?>
 	<!-- Fin content-top -->
 
-	<div id="content" class="container site-content">
-		<div class="row">
+	<div id="content" class="container site-content<?php echo has_sidebar()?' sidebar':'' ?>">
