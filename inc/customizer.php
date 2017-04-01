@@ -14,8 +14,27 @@ function adaptativo_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+
+	$wp_customize->add_setting( 'color_theme_settings', array(
+		'default'   => '#ff0000',
+		'transport' => 'postMessage'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'color_theme_control',
+		array(
+			'label'      => __( 'Theme Color x', 'adaptativo' ),
+			'section'    => 'colors',
+			'settings'	 => 'color_theme_settings',
+			'priority'	 => 10
+		) )
+	);
+
 }
 add_action( 'customize_register', 'adaptativo_customize_register' );
+
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

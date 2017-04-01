@@ -18,11 +18,8 @@
  */
 function adaptativo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'adaptativo_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'default-image'          => '../img/background-header.jpg',
+		'default-text-color'     => '#ff0000',
 		'wp-head-callback'       => 'adaptativo_header_style',
 	) ) );
 }
@@ -35,6 +32,7 @@ if ( ! function_exists( 'adaptativo_header_style' ) ) :
  * @see adaptativo_custom_header_setup().
  */
 function adaptativo_header_style() {
+
 	$header_text_color = get_header_textcolor();
 
 	/*
@@ -44,6 +42,17 @@ function adaptativo_header_style() {
 	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 		return;
 	}
+
+
+	// color link
+	$color_theme = get_theme_mod('color_theme_settings');
+?>
+	<style type="text/css">
+		body{
+			background-color: <?php echo $color_theme; ?>
+		}
+	</style>
+	<?php
 
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -57,6 +66,7 @@ function adaptativo_header_style() {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
+
 	<?php
 		// If the user has set a custom color for the text use that.
 		else :
