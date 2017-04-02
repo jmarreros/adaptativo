@@ -14,6 +14,6 @@ if ( ! has_sidebar() ) return;
 
 ?>
 
-<aside id="secondary" class="widget-area col-4" role="complementary">
+<aside id="secondary" class="widget-area" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

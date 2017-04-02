@@ -1,0 +1,159 @@
+
+//------------------------------------------------------------
+//-------------------------   MIN -WIDTH ---------------------
+//------------------------------------------------------------
+
+
+// @media only screen and (min-width: 33.75em) {  // 540px
+//
+//   //grid
+//   .container {
+//     width: 80%;
+//   }
+//
+// }
+
+
+@media screen and (min-width: 598px) { //598px
+
+  //menu toogle
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+
+@media only screen and (min-width: 45em) {  // 720px
+
+  //grid
+  .col-1 {width: 4.33%;}
+  .col-2 {width: 12.66%;}
+  .col-3 {width: 21%;}
+  .col-4 {width: 29.33%;}
+  .col-5 {width: 37.66%;}
+  .col-6 {width: 46%;}
+  .col-7 {width: 54.33%;}
+  .col-8 {width: 62.66%;}
+  .col-9 {width: 71%;}
+  .col-10 {width: 79.33%;}
+  .col-11 {width: 87.66%;}
+  .col-12 {width: 96%;}
+  .hidden-sm {
+    display: block;
+  }
+  //--fin grid
+
+
+}
+
+
+// @media only screen and (min-width: 60em) { // 960px
+//
+//   //grid
+//   .container {
+//     width: 90%;
+//     max-width: 60rem;
+//     max-width: 1200px;
+//   }
+//
+// }
+
+
+
+//------------------------------------------------------------
+//-------------------------   MAX -WIDTH ---------------------
+//------------------------------------------------------------
+
+
+@media (max-width:960px){
+
+  //content - sidebar
+  .site-content.sidebar{
+    #primary, #secondary{
+      width:100%;
+    }
+  }
+
+}
+
+@media (max-width:768px){
+  footer.site-footer .menu{
+    margin-top: 16px;
+    text-align: left;
+  }
+}
+
+
+@media (max-width:598px){
+
+  // navigation
+  .main-navigation {
+
+    ul{
+      width: 100%;
+      background-color: white;
+
+      ul{
+        border-top: none;
+      }
+
+    } //ul
+
+    .nav-menu > li{
+      padding:10px 8px;
+      display:block;
+      position:static;
+      border-bottom: 1px solid $gris-muyclaro;
+
+      &.current-menu-item,
+      &.current-menu-parent{
+
+        > a{
+            &:after{
+              border:none;
+            }
+        }
+
+      }
+
+      > a{
+        display: block;
+        color:$gris-claro;
+      }
+
+    } //.nav-menu > li
+
+
+    //Sub-menus
+    li ul{
+      position: static;
+      box-shadow: none;
+      margin:16px 6px;
+
+      li{
+
+        width: 100%;
+
+        a{
+          font-size: .9em;
+          display: block;
+          width: 100%;
+          padding: 10px 8px;
+
+          &:hover{
+            background-color: transparent;
+            color:$gris-medio;
+          }
+        } //a
+
+      } //li
+
+    } //li ul
+
+
+  } //-- navigation - main-navigation
+
+}

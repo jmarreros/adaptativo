@@ -179,6 +179,7 @@ function adaptativo_scripts() {
 	//styles
 	wp_enqueue_style( 'adaptativo-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'adaptativo-gfont', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Raleway' );
+	wp_enqueue_style( 'custom-stylesheet', get_template_directory_uri() . '/css/font-awesome.min.css');
 
 	//scripts
 	wp_enqueue_script( 'adaptativo-jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array(), '3.2.1', true );

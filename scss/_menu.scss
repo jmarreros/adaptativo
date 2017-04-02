@@ -4,7 +4,6 @@
     width: 100%;
     padding:12px;
     font-size: 1.2em;
-    background-color: rgba(white,.8);
     border-radius: 0;
   }
 
@@ -91,77 +90,77 @@
 } // main-navigation
 
 
-
-@media (max-width:598px){
-
-  .main-navigation {
-
-    ul{
-      width: 100%;
-      background-color: white;
-
-      ul{
-        border-top: none;
-      }
-
-    } //ul
-
-    .nav-menu > li{
-      padding:10px 8px;
-      display:block;
-      position:static;
-      border-bottom: 1px solid $gris-muyclaro;
-
-      &.current-menu-item,
-      &.current-menu-parent{
-
-        > a{
-            &:after{
-              border:none;
-            }
-        }
-
-      }
-
-      > a{
-        display: block;
-        color:$gris-claro;
-      }
-
-    } //.nav-menu > li
-
-
-    //Sub-menus
-    li ul{
-      position: static;
-      box-shadow: none;
-      margin:16px 6px;
-
-      li{
-
-        width: 100%;
-
-        a{
-          font-size: .9em;
-          display: block;
-          width: 100%;
-          padding: 10px 8px;
-
-          &:hover{
-            background-color: transparent;
-            color:$gris-medio;
-          }
-        } //a
-
-      } //li
-
-    } //li ul
-
-
-  } //main-navigation
-
-}// @media
-
+//
+// @media (max-width:598px){
+//
+//   .main-navigation {
+//
+//     ul{
+//       width: 100%;
+//       background-color: white;
+//
+//       ul{
+//         border-top: none;
+//       }
+//
+//     } //ul
+//
+//     .nav-menu > li{
+//       padding:10px 8px;
+//       display:block;
+//       position:static;
+//       border-bottom: 1px solid $gris-muyclaro;
+//
+//       &.current-menu-item,
+//       &.current-menu-parent{
+//
+//         > a{
+//             &:after{
+//               border:none;
+//             }
+//         }
+//
+//       }
+//
+//       > a{
+//         display: block;
+//         color:$gris-claro;
+//       }
+//
+//     } //.nav-menu > li
+//
+//
+//     //Sub-menus
+//     li ul{
+//       position: static;
+//       box-shadow: none;
+//       margin:16px 6px;
+//
+//       li{
+//
+//         width: 100%;
+//
+//         a{
+//           font-size: .9em;
+//           display: block;
+//           width: 100%;
+//           padding: 10px 8px;
+//
+//           &:hover{
+//             background-color: transparent;
+//             color:$gris-medio;
+//           }
+//         } //a
+//
+//       } //li
+//
+//     } //li ul
+//
+//
+//   } //main-navigation
+//
+// }// @media
+//
 
 
 // .nav-more{
