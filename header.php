@@ -83,6 +83,7 @@
 
 
   <div class="wrap-content">
+
 	<!-- Content-top -->
 	<?php if ( is_my_home() &&  is_active_sidebar('home-content-top') ): ?>
 		<div class="container home-content-top">

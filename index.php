@@ -40,7 +40,17 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+
+			the_posts_pagination( array(
+				'prev_text' => '<i class="fa fa-arrow-left" aria-hidden="true"></i>' . '<span class="screen-reader-text">' . __( 'Previous page', 'adaptativo' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'adaptativo' ) . '</span>' .'<i class="fa fa-arrow-right" aria-hidden="true"></i>',
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adaptativo' ) . ' </span>',
+			) );
+
+
+
+			//echo paginate_links();
+
 
 		else :
 

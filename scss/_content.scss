@@ -59,13 +59,131 @@
 
 }
 
+//Breadcrumbs , cuando se implementen con plugin
+#breadcrumbs,
+.breadcrumbs{
+  border-bottom: 1px solid $gris-muyclaro;
+  padding-bottom: 12px;
+}
 
-// @media (max-width:960px){
-// 
-//   .site-content.sidebar{
-//     #primary, #secondary{
-//       width:100%;
-//     }
-//   }
-//
-// }
+//Comentarios
+.comments-area{
+
+  padding:20px;
+  border:1px solid darken($gris-muyclaro,5%);
+
+  ul.comment-list{
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  ul.comment-list,
+  ul.children{
+    list-style: none;
+  }
+
+  .comment-body{
+
+      border: 1px solid $gris-muyclaro;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+      padding:20px 15px;
+
+      .avatar{
+          border-radius: 50%;
+      }
+
+      .comment-author{
+        cite,
+        cite a{
+          text-transform: uppercase;
+          text-decoration: none;
+          font-style: normal;
+          margin-left: 4px;
+        }
+      }
+
+      .reply,
+      .commentmetadata{
+
+        text-align: right;
+
+        a{
+            color:$gris-claro;
+            text-decoration: none;
+
+            &:hover{
+              color:$colorprincipal;
+            }
+        }
+
+        .fa-reply{
+          color:$gris-claro;
+        }
+
+      }
+
+  } // comment-body
+
+
+  .comment-form{
+
+    padding:20px;
+    background-color: $gris-muyclaro;
+
+    label{
+      width:100%;
+      display: block;
+      color:$gris-claro;
+    }
+
+    a{
+      color:$gris-claro;
+
+      &:hover{
+        color:$colorprincipal;
+      }
+    }
+
+  } //comment-form
+
+} // comments-area
+
+
+//pagination
+.navigation{
+
+  padding-top:20px;
+  margin-top:40px;
+  border-top:1px solid $gris-muyclaro;
+  text-align: center;
+
+  .page-numbers{
+      padding:8px;
+      display: inline-block;
+      width:40px;
+      text-decoration: none;
+      border: 1px solid $gris-muyclaro;
+  }//page-numbers
+
+  a.page-numbers{
+
+    &:hover{
+      color:white;
+      background-color:$colorprincipal;
+    }
+
+  } //a.page-numbers
+
+} //pagination - navigation
+
+
+//articles blog
+.site-main{
+    .entry-title{
+      a{
+        text-decoration:none;
+        color:$gris-medio;
+      }
+    }
+}

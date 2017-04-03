@@ -1,4 +1,5 @@
 aside.widget-area{
+
   border:1px solid $gris-muyclaro;
   padding:30px 20px;
 
@@ -11,5 +12,57 @@ aside.widget-area{
     padding-right:0;
     width:20%;
   }
+
+  .widget{
+      padding:5px;
+  }
+
+  .widget-title{
+    &:after{
+      content:"";
+      display: block;
+      margin-top:10px;
+      width:20%;
+      height: 4px;
+      background-color: $colorprincipal;
+    }
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li{
+      display: block;
+      width: 100%;
+      padding: 5px;
+      border-bottom: 1px solid $gris-muyclaro;
+
+
+      a{
+        color:$gris-claro;
+        text-decoration: none;
+        &:hover{
+          color:$colorprincipal;
+        }
+      }
+
+    }
+  }
+
+
+  .widget_recent_entries,
+  .widget_archive,
+  .widget_categories,
+  .widget_meta{
+  	 ul li a:before{
+      font-family:"FontAwesome";
+      content: "\f061";
+      margin-right: 10px;
+      font-size: 10px;
+     }
+  }
+
+
 
 }
