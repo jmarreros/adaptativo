@@ -375,7 +375,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 1.5em;
 }
 
 ul {
@@ -1302,25 +1302,34 @@ header.site-header {
   text-decoration: none;
   color: #5c5c5c;
   font-size: 2em; }
+  .site-main .entry-title a:hover {
+    color: #ffcc00; }
 
-.site-main .entry-footer .cat-links, .site-main .entry-footer .tags-links {
+.site-main .entry-header .author a,
+.site-main .entry-header .cat-links a {
+  text-decoration: none;
+  color: #999; }
+  .site-main .entry-header .author a:hover,
+  .site-main .entry-header .cat-links a:hover {
+    color: #ffcc00; }
+
+.site-main .entry-header .comments-link {
   display: block;
-  margin: 10px auto; }
-  .site-main .entry-footer .cat-links a, .site-main .entry-footer .tags-links a {
-    font-family: "Helvetica", sans-serif;
-    font-weight: 300;
-    text-decoration: none; }
-
-.site-main .entry-footer .cat-links a {
-  text-transform: uppercase;
-  font-size: .9em; }
+  background-color: #ffcc00; }
+  .site-main .entry-header .comments-link .fa {
+    color: white;
+    margin-right: 2px; }
+  .site-main .entry-header .comments-link a {
+    text-decoration: none;
+    color: white; }
 
 .site-main .entry-footer .tags-links a {
   padding: 3px 5px;
-  background-color: #e6b800;
+  background-color: #999;
   color: white;
   font-size: .8em;
-  border-radius: 2px; }
+  border-radius: 2px;
+  text-decoration: none; }
   .site-main .entry-footer .tags-links a:hover {
     background-color: #ffcc00; }
 
@@ -1347,14 +1356,16 @@ header.site-header {
   padding-left: 95px;
   position: relative; }
 
-.site-main .date-article {
-  width: 72px;
-  color: #999;
-  background-color: #f0f0f0;
-  text-align: center;
+.site-main .wrap-info-article {
   position: absolute;
   top: 8px;
-  left: 0; }
+  left: 0;
+  width: 72px;
+  text-align: center; }
+
+.site-main .date-article {
+  color: #999;
+  background-color: #f0f0f0; }
   .site-main .date-article .month-year,
   .site-main .date-article .day {
     display: block;
