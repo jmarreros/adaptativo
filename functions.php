@@ -270,3 +270,16 @@ function adaptativo_custom_comments($comment, $args, $depth) {
     <?php endif; ?>
     <?php
   }
+
+
+//Read more-link
+
+function modify_read_more_link() {
+    $link_text = sprintf(
+			wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'adaptativo' ), array( 'span' => array( 'class' => array() )) ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		);
+
+		return '<div class="wrap-more-link"><a class="more-link" href="' . get_permalink() . '">'.$link_text.'</a></div>';
+}
+add_filter( 'the_content_more_link', 'modify_read_more_link' );

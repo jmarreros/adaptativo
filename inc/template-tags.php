@@ -12,22 +12,34 @@ if ( ! function_exists( 'adaptativo_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function adaptativo_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	// $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+	// 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	// }
+	//
+	// $time_string = sprintf( $time_string,
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() ),
+	// 	esc_attr( get_the_modified_date( 'c' ) ),
+	// 	esc_html( get_the_modified_date() )
+	// );
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'adaptativo' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	// $posted_on = sprintf(
+	// 	esc_html_x( 'Posted on %s', 'post date', 'adaptativo' ),
+	// 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	// );
+
+
+	$day 		= sprintf("%02d", get_the_date('j'));
+	$month 	= substr(get_the_date('F'),0,3);
+	$year 	= get_the_date('y');
+
+	echo '<div class="date-article" rel="bookmark">';
+	echo '<span class="day">'.$day.'</span>';
+	echo '<span class="month-year">'.$month.'-'.$year.'</span>';
+	echo '</div>';
+
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'adaptativo' ),
