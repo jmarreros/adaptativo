@@ -283,3 +283,6 @@ function modify_read_more_link() {
 		return '<div class="wrap-more-link"><a class="more-link" href="' . get_permalink() . '">'.$link_text.'</a></div>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
+//Image Serializable
+add_image_size( 'adaptativo_img_home' , 400, 360, true );

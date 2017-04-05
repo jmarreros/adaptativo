@@ -10,6 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+		if ( has_post_thumbnail() ){
+			echo '<div class="single-thumbnail">';
+			the_post_thumbnail( 'full' );
+			echo '</div>';
+		}
+	?>
+
+	
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :

@@ -15,11 +15,11 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			if ( has_post_thumbnail() ){
-				echo '<div class="single-thumbnail">';
-				the_post_thumbnail( 'full' );
-				echo '</div>';
-			}
+			// if ( has_post_thumbnail() ){
+			// 	echo '<div class="single-thumbnail">';
+			// 	the_post_thumbnail( 'full' );
+			// 	echo '</div>';
+			// }
 
 			get_template_part( 'template-parts/content', get_post_format() );
 

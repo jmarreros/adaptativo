@@ -220,6 +220,8 @@
           a{
             text-decoration: none;
             color:white;
+            display: block;
+            width: 100%;
           }
 
         }
@@ -299,6 +301,52 @@
 
     }
 
+    //Homesite
+    &.home-site{
+
+        article{
+          width: 33%;
+
+          &.post{
+            padding-left: 0;
+          }
+
+        }
+
+        .posted-on{
+            display: block;
+        }
+
+        article{
+          position: relative;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-color: $colorprincipal;
+          min-height: 400px;
+
+          .wrap-article-home{
+              position: absolute;
+              bottom:0;
+              padding: 15px;
+              background-color: $colorprincipal;
+              color:white;
+          }
+
+          .entry-title {
+
+            margin-top: 0;
+
+            a{
+              font-size: 1.2em;
+              color:white;
+            }
+
+          }
 
 
-}
+
+        }
+
+    } // homesite
+
+} //Site content

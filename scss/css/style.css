@@ -341,7 +341,9 @@ header.site-header {
     margin-right: 2px; }
   .site-main .entry-header .comments-link a {
     text-decoration: none;
-    color: white; }
+    color: white;
+    display: block;
+    width: 100%; }
 
 .site-main .entry-footer .tags-links a {
   padding: 3px 5px;
@@ -394,6 +396,32 @@ header.site-header {
     font-size: 2.4em;
     font-weight: 700;
     font-family: "Helvetica", sans-serif; }
+
+.site-main.home-site article {
+  width: 33%; }
+  .site-main.home-site article.post {
+    padding-left: 0; }
+
+.site-main.home-site .posted-on {
+  display: block; }
+
+.site-main.home-site article {
+  position: relative;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #ffcc00;
+  min-height: 400px; }
+  .site-main.home-site article .wrap-article-home {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    background-color: #ffcc00;
+    color: white; }
+  .site-main.home-site article .entry-title {
+    margin-top: 0; }
+    .site-main.home-site article .entry-title a {
+      font-size: 1.2em;
+      color: white; }
 
 aside.widget-area {
   border: 1px solid #f0f0f0;
