@@ -1398,10 +1398,21 @@ header.site-header {
     background-color: #ffcc00;
     color: white; }
   .site-main.home-site article .entry-title {
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.2em; }
     .site-main.home-site article .entry-title a {
       font-size: 1.2em;
       color: white; }
+  .site-main.home-site article .entry-content {
+    margin-top: 12px;
+    color: #5c5c5c; }
+  .site-main.home-site article .entry-header .author, .site-main.home-site article .entry-header .posted-on {
+    display: inline-block; }
+    .site-main.home-site article .entry-header .author a, .site-main.home-site article .entry-header .posted-on a {
+      color: white; }
+  .site-main.home-site article .entry-header .posted-on:after {
+    content: " | "; }
 
 aside.widget-area {
   border: 1px solid #f0f0f0;

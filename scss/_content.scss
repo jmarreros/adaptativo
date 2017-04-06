@@ -335,6 +335,8 @@
           .entry-title {
 
             margin-top: 0;
+            margin-bottom: 5px;
+            line-height: 1.2em;
 
             a{
               font-size: 1.2em;
@@ -343,9 +345,24 @@
 
           }
 
+          .entry-content{
+              margin-top: 12px;
+              color:$gris-medio;
+          }
 
+          .entry-header{
+              .author, .posted-on{
+                  display: inline-block;
+                  a{
+                    color:white;
+                  }
+              }
+              .posted-on:after{
+                content:" | ";
+              }
+          }
 
-        }
+        } // article
 
     } // homesite
 

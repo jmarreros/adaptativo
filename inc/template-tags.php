@@ -54,13 +54,18 @@ function adaptativo_posted_on( $adaptativo_is_home = false ) {
 	);
 	echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'adaptativo' ) );
-		if ( $categories_list && adaptativo_categorized_blog() ) {
-			printf( ' | <span class="cat-links">%1$s </span>', $categories_list ); // WPCS: XSS OK.
+
+	if ( ! $adaptativo_is_home ):
+
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'adaptativo' ) );
+			if ( $categories_list && adaptativo_categorized_blog() ) {
+				printf( ' | <span class="cat-links">%1$s </span>', $categories_list ); // WPCS: XSS OK.
+			}
 		}
-	}
+
+	endif;
 
 
 }
