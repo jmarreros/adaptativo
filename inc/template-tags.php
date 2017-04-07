@@ -7,69 +7,84 @@
  * @package Adaptativo
  */
 
+
+ //Only for content-home.php
+ if ( ! function_exists('adaptativo_posted_on_home') ):
+	 /**
+	  * Prints HTML with meta information for the current post-date/time and author.
+	  */
+ 		function adaptativo_posted_on_home(){
+
+ 			// date
+ 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+ 			$posted_on = sprintf( $time_string,	esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() )	);
+ 			echo '<span class="posted-on">' . $posted_on . '</span>';
+
+ 			// Author
+			$author = sprintf( _x( 'by %s', 'post author', 'adaptativo' ), esc_html( get_the_author() ) );
+ 			echo '<span class="byline"> ' . $author . '</span>';
+
+ 		} // adaptativo_posted_on_home
+
+ endif; // ! function_exists
+
+
+
 if ( ! function_exists( 'adaptativo_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function adaptativo_posted_on( $adaptativo_is_home = false ) {
+function adaptativo_posted_on() {
 
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-		$posted_on = sprintf( $time_string,	esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() )	);
+		//date
+		$day 		= sprintf("%02d", get_the_date('j'));
+		$month 	= substr(get_the_date('F'),0,3);
+		$year 	= get_the_date('y');
 
-		if ( ! $adaptativo_is_home ):
+		echo '<div class="wrap-info-article">';
 
-			$day 		= sprintf("%02d", get_the_date('j'));
-			$month 	= substr(get_the_date('F'),0,3);
-			$year 	= get_the_date('y');
+			echo '<div class="date-article" rel="bookmark">';
+			echo '<span class="day">'.$day.'</span>';
+			echo '<span class="month-year">'.$month.'-'.$year.'</span>';
+			echo '</div>';
 
-			echo '<div class="wrap-info-article">';
+			echo '<span class="posted-on screen-reader-text">' . $posted_on . '</span>';
 
-				echo '<div class="date-article" rel="bookmark">';
-				echo '<span class="day">'.$day.'</span>';
-				echo '<span class="month-year">'.$month.'-'.$year.'</span>';
-				echo '</div>';
+			if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
-				echo '<span class="posted-on screen-reader-text">' . $posted_on . '</span>';
+				$icon_comments='<i class="fa fa-comment fa-flip-horizontal" aria-hidden="true"></i>';
 
-				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+				echo '<span class="comments-link">';
+				comments_popup_link('',$icon_comments.' 1',$icon_comments.' %');
+				echo '</span>';
+			}
 
-					$icon_comments='<i class="fa fa-comment fa-flip-horizontal" aria-hidden="true"></i>';
+		echo '</div>'; //wrap-info-article;
 
-					echo '<span class="comments-link">';
-					comments_popup_link('',$icon_comments.' 1',$icon_comments.' %');
-					echo '</span>';
-				}
 
-			echo '</div>'; //wrap-info-article;
-
-	else:
-
-		echo '<span class="posted-on">' . $posted_on . '</span>';
-
-	endif;
-
+	// Author
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'adaptativo' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-	echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+		echo '<span class="byline"> ' . $byline . '</span>';
 
 
-	if ( ! $adaptativo_is_home ):
-
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'adaptativo' ) );
-			if ( $categories_list && adaptativo_categorized_blog() ) {
-				printf( ' | <span class="cat-links">%1$s </span>', $categories_list ); // WPCS: XSS OK.
-			}
+	//Categories
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'adaptativo' ) );
+		if ( $categories_list && adaptativo_categorized_blog() ) {
+			printf( ' | <span class="cat-links">%1$s </span>', $categories_list ); // WPCS: XSS OK.
 		}
+	}
 
-	endif;
+
+} // function adaptativo_posted_on
+endif; // ! function_exists
 
 
-}
-endif;
+
 
 if ( ! function_exists( 'adaptativo_entry_footer' ) ) :
 /**

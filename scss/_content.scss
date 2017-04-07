@@ -14,8 +14,9 @@
 .home-content-top,
 .content-bottom,
 .home-content-bottom{
+  width: 100%;
   padding: 20px;
-  // margin-top: -2.5em;
+  clear: both;
   background-color: #EAEAEA;
   color:$gris-medio;
   section {
@@ -25,12 +26,6 @@
     margin-top:5px;
   }
 }
-
-// .content-bottom,
-// .home-content-bottom{
-//   margin-top:0;
-// }
-
 
 .site-content{
     background: white;
@@ -152,7 +147,8 @@
 
 //pagination
 .navigation{
-
+  width: 100%;
+  clear:both;
   padding-top:20px;
   margin-top:40px;
   border-top:1px solid $gris-muyclaro;
@@ -180,11 +176,18 @@
 
 //articles blog
 .site-main{
+
+    h1.entry-title{
+      font-size: 2.6em;
+      line-height: 1.4em;
+    }
+
     .entry-title{
       a{
         text-decoration:none;
         color:$gris-medio;
-        font-size: 2em;
+        font-size: 1.8em;
+        line-height: 1.2em;
 
         &:hover{
           color:$colorprincipal;
@@ -304,33 +307,55 @@
     //Homesite
     &.home-site{
 
-        article{
-          width: 33%;
-
-          &.post{
-            padding-left: 0;
-          }
-
-        }
-
         .posted-on{
             display: block;
         }
 
         article{
+
+          width: 32%;
+          float:left;
+          margin-right: 2%;
+          padding-left: 0;
+
           position: relative;
           background-size: 100%;
           background-repeat: no-repeat;
           background-color: $colorprincipal;
           min-height: 400px;
 
+
+          &:nth-child(3n){
+            margin-right:0;
+          }
+
+
+
+          &:hover .wrap-article-home .entry-content{
+            max-height: 200px;
+            transition: max-height 0.25s ease-in;
+          }
+
           .wrap-article-home{
+              display: block;
               position: absolute;
+              width: 100%;
               bottom:0;
               padding: 15px;
               background-color: $colorprincipal;
               color:white;
+              text-decoration: none;
+              overflow: hidden;
+
+              .entry-content{
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.15s ease-out;
+              }
+
+
           }
+
 
           .entry-title {
 

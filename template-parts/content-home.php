@@ -22,36 +22,39 @@ if ( has_post_thumbnail()  ){
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo $img_background; ?> >
 
-  <div class="wrap-article-home">
+  <a class="wrap-article-home" href="<?php echo esc_url( get_permalink() ); ?>"  >
 
-  	<header class="entry-header">
-  		<?php
-  		if ( is_single() ) :
-  			the_title( '<h1 class="entry-title">', '</h1>' );
-  		else :
-  			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-  		endif;
 
-  		if ( 'post' === get_post_type() ) : ?>
-  		<div class="entry-meta">
-  			<?php adaptativo_posted_on( true ); ?>
-  		</div><!-- .entry-meta -->
-  		<?php
-  		endif; ?>
-  	</header><!-- .entry-header -->
 
-  	<div class="entry-content">
-  		<?php
+    	<header class="entry-header">
+    		<?php
+    		if ( is_single() ) :
+    			the_title( '<h1 class="entry-title">', '</h1>' );
+    		else :
+    			the_title( '<h2 class="entry-title">', '</h2>' );
+    		endif;
 
-        the_excerpt_max_charlength(140);
+    		if ( 'post' === get_post_type() ) : ?>
+    		<div class="entry-meta">
+    			<?php adaptativo_posted_on_home(); ?>
+    		</div><!-- .entry-meta -->
+    		<?php
+    		endif; ?>
+    	</header><!-- .entry-header -->
 
-  			wp_link_pages( array(
-  				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'adaptativo' ),
-  				'after'  => '</div>',
-  			) );
-  		?>
-  	</div><!-- .entry-content -->
+    	<div class="entry-content">
+    		<?php
 
-  </div><!-- wrap-article-home -->
+          the_excerpt_max_charlength(140);
+
+    			wp_link_pages( array(
+    				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'adaptativo' ),
+    				'after'  => '</div>',
+    			) );
+    		?>
+    	</div><!-- .entry-content -->
+
+
+  </a><!-- wrap-article-home -->
 
 </article><!-- #post-## -->
