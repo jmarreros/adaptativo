@@ -48,7 +48,7 @@ if ( ! function_exists( 'adaptativo_header_style' ) ) :
 		?>
 		<style type="text/css">
 			header.site-header{
-				background: url(<?php echo $header_image; ?>);
+				background-image: url(<?php echo $header_image; ?>);
 			}
 		</style>
 		<?php

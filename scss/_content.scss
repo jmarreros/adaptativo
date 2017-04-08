@@ -67,14 +67,15 @@
   padding:20px;
   border:1px solid darken($gris-muyclaro,5%);
 
-  ul.comment-list{
-    margin-left: 0;
-    padding-left: 10px;
-  }
-
   ul.comment-list,
   ul.children{
+    margin-left: 0;
+    padding-left: 0px;
     list-style: none;
+  }
+
+  ul.children{
+    padding-left: 25px;
   }
 
   .comment-body{
@@ -321,7 +322,7 @@
           position: relative;
           background-size: 100%;
           background-repeat: no-repeat;
-          background-color: $colorprincipal;
+          background-color: $colorsecundario;
           min-height: 400px;
 
 
@@ -342,7 +343,7 @@
               width: 100%;
               bottom:0;
               padding: 15px;
-              background-color: $colorprincipal;
+              background-color: $colorsecundario;
               color:white;
               text-decoration: none;
               overflow: hidden;
@@ -392,3 +393,19 @@
     } // homesite
 
 } //Site content
+
+.home-content-top{
+  padding:0;
+
+  .widget{
+    padding: 20px;
+  }
+
+  .widget_search{
+      background-color: white;
+      text-align: right;
+      padding-bottom:0;
+      padding-right: 30px;
+  }
+
+}

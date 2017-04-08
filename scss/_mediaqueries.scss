@@ -62,7 +62,6 @@
 // }
 
 
-
 //------------------------------------------------------------
 //-------------------------   MAX -WIDTH ---------------------
 //------------------------------------------------------------
@@ -100,6 +99,15 @@
   }//site-main
 
 
+  .home-content-top{
+
+    .widget_search{
+      text-align:center;
+    }
+
+  } //home-content-top
+
+
 }
 
 @media (max-width:768px){
@@ -110,7 +118,16 @@
     text-align: left;
   }
 
+  .home-header-bottom{
 
+    h2{
+      font-size: 1.2em;
+    }
+    h3{
+      font-size: .8em;
+    }
+
+  }
 }
 
 
@@ -216,10 +233,19 @@
 
         } //article
 
-    }//site-main home-site
+    }//home-site
+
+  } //site-main
+
+
+  //comments
+  .comments-area{
+
+   	ul.children{
+   		padding-left: 10px;
+   	}
 
   }
-
 
 
 }

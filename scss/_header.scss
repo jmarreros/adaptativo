@@ -26,6 +26,10 @@
 
 header.site-header{
   padding-bottom: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
 
 .header-bottom,
@@ -62,8 +66,68 @@ header.site-header{
   text-align: center;
 }
 
+.header-bottom,
 .home-header-bottom{
+
   h1, h2{
     font-size: 2em;
   }
+
+
+} //.header-bottom,.home-header-bottom
+
+.header-bottom,
+.home-header-bottom,
+aside{
+
+  .textwidget{
+
+    a{
+      text-decoration: none;
+      .fa{
+          text-align: center;
+          line-height: 30px;
+          font-size: 20px;
+          color:white;
+          border-radius: 50%;
+          margin-right: 5px;
+          background-color: $colorsecundario;
+          width: 32px;
+          height: 32px;
+      }// fa
+
+      &:hover{
+
+        color:white;
+
+        .fa{
+          color:white;
+          background-color: $gris-oscuro;
+        }
+
+        .fa-facebook{
+          background-color: #3B579D;
+        }
+        .fa-twitter{
+          background-color: #2DAAE2;
+        }
+        .fa-rss{
+          background-color: #FF9900;
+        }
+        .fa-google-plus{
+          background-color: #DC4A38;
+        }
+        .fa-pinterest-p{
+          background-color: #CB2027;
+        }
+        .fa-linkedin{
+          background-color: #0274B3;
+        }
+
+      } //:hover
+
+    } // a
+
+  } // textwidget
+
 }
