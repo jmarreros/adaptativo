@@ -1084,7 +1084,7 @@ textarea {
   .site-title a {
     width: 100%;
     display: block;
-    color: #5c5c5c;
+    color: white;
     text-decoration: none; }
 
 .site-description {
@@ -1092,7 +1092,8 @@ textarea {
   font-family: "Helvetica", sans-serif;
   text-align: center;
   font-weight: 300;
-  font-size: 1em; }
+  font-size: 1em;
+  color: white; }
 
 header.site-header {
   padding-bottom: 80px;
@@ -1501,6 +1502,28 @@ aside .textwidget a {
     padding-bottom: 0;
     padding-right: 30px; }
 
+#mc_embed_signup #mce-responses {
+  display: none; }
+
+#mc_embed_signup form .mc-field-group {
+  width: 40%;
+  display: inline-block; }
+
+#mc_embed_signup form input,
+#mc_embed_signup form label {
+  display: block;
+  width: 100%; }
+
+#mc_embed_signup form > div div:last-child {
+  display: inline-block;
+  width: 18%; }
+  #mc_embed_signup form > div div:last-child #mc-embedded-subscribe {
+    background-color: #ffcc00;
+    box-shadow: none;
+    padding: 10px; }
+    #mc_embed_signup form > div div:last-child #mc-embedded-subscribe:hover {
+      background-color: #1D1D1D; }
+
 aside.widget-area {
   border: 1px solid #f0f0f0;
   padding: 30px 20px; }
@@ -1670,4 +1693,8 @@ footer.site-footer {
     .site-main.home-site article:nth-child(2n) {
       margin-right: 0; }
   .comments-area ul.children {
-    padding-left: 10px; } }
+    padding-left: 10px; }
+  #mc_embed_signup form .mc-field-group,
+  #mc_embed_signup form > div div:last-child {
+    width: 100%;
+    margin-bottom: 20px; } }

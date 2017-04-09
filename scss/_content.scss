@@ -409,3 +409,40 @@
   }
 
 }
+
+//mailchimp
+#mc_embed_signup{
+
+  #mce-responses{
+    display: none;
+  }
+
+  form{
+
+    .mc-field-group{
+      width: 40%;
+      display: inline-block;
+    }
+
+    input,
+    label{
+      display: block;
+      width: 100%;
+    }
+
+    > div div:last-child{
+      display: inline-block;
+      width: 18%;
+      #mc-embedded-subscribe{
+        background-color: $colorprincipal;
+        box-shadow: none;
+        padding:10px;
+        &:hover{
+          background-color: $gris-oscuro;
+        }
+      }
+    }
+
+  }
+
+}
