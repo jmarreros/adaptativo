@@ -59,6 +59,11 @@
 .breadcrumbs{
   border-bottom: 1px solid $gris-muyclaro;
   padding-bottom: 12px;
+  color:$gris-claro;
+  
+  a{
+    text-decoration: none;
+  }
 }
 
 //Comentarios

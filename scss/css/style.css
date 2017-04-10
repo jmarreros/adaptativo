@@ -7,7 +7,7 @@ body {
   max-width: 1240px;
   min-width: 360px; }
 
-a {
+a, a:visited {
   color: #ffcc00; }
 
 .rounded {
@@ -312,7 +312,11 @@ aside .textwidget a {
 #breadcrumbs,
 .breadcrumbs {
   border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 12px; }
+  padding-bottom: 12px;
+  color: #999; }
+  #breadcrumbs a,
+  .breadcrumbs a {
+    text-decoration: none; }
 
 .comments-area {
   padding: 20px;
