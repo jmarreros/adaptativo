@@ -12,6 +12,7 @@
     display: block;
     color:white;
     text-decoration: none;
+    text-shadow: 1px 1px 2px $texto-sombra;
   }
 
 }
@@ -23,6 +24,7 @@
   font-weight: 300;
   font-size: 1em;
   color:white;
+  text-shadow:1px 1px 2px $texto-sombra;
 }
 
 header.site-header{
@@ -43,6 +45,7 @@ header.site-header{
   h1, h2, h3, h4{
     font-family: $font2;
     font-size: 1.8em;
+    text-shadow: 1px 1px 2px $texto-sombra;
   }
   h3, h4{
     font-size: 1em;

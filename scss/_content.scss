@@ -19,6 +19,16 @@
   clear: both;
   background-color: #EAEAEA;
   color:$gris-medio;
+
+  a{
+      color:$gris-medio;
+      text-decoration: underline;
+
+      &:hover{
+        color:$gris-oscuro;
+      }
+  }
+
   section {
     margin:0;
   }
@@ -60,7 +70,7 @@
   border-bottom: 1px solid $gris-muyclaro;
   padding-bottom: 12px;
   color:$gris-claro;
-  
+
   a{
     text-decoration: none;
   }
@@ -68,6 +78,19 @@
 
 //Comentarios
 .comments-area{
+
+  .comment-respond{
+    margin-top: 20px;
+  }
+
+  .comments-title,
+  .comment-reply-title{
+    font-size: 1.6em;
+  }
+
+  .comment-reply-title{
+    margin-bottom: 10px;
+  }
 
   padding:20px;
   border:1px solid darken($gris-muyclaro,5%);
@@ -120,6 +143,7 @@
 
         .fa-reply{
           color:$gris-claro;
+          font-size: 12px;
         }
 
       }
@@ -146,7 +170,14 @@
       }
     }
 
+    textarea{
+      resize:vertical;
+    }
+
+
   } //comment-form
+
+
 
 } // comments-area
 
@@ -164,8 +195,15 @@
       padding:8px;
       display: inline-block;
       width:40px;
-      text-decoration: none;
       border: 1px solid $gris-muyclaro;
+      color:$gris-medio;
+      text-decoration: none;
+
+      &.current{
+        color:$gris-claro;
+        background-color: $gris-muyclaro;
+      }
+
   }//page-numbers
 
   a.page-numbers{
@@ -180,19 +218,19 @@
 } //pagination - navigation
 
 
-//articles blog
+//articles
 .site-main{
 
+    h1.page-title,
     h1.entry-title{
-      font-size: 2.6em;
       line-height: 1.4em;
+      margin: 0.67em 0;
     }
 
     .entry-title{
       a{
         text-decoration:none;
         color:$gris-medio;
-        font-size: 1.8em;
         line-height: 1.2em;
 
         &:hover{
@@ -264,12 +302,12 @@
       text-transform: uppercase;
       font-family: $font3;
       font-size: .8em;
-      border:1px solid lighten($gris-claro,15%);
-      color:lighten($gris-claro,10%);
+      // border:1px solid $gris-claro;
+      //color: $gris-medio; //lighten($gris-claro,10%);
 
       &:hover{
-        background-color: $gris-medio;
-        color:white;
+        // background-color: $gris-medio;
+        // color:white;
       }
 
     }
@@ -335,12 +373,20 @@
             margin-right:0;
           }
 
-
-
-          &:hover .wrap-article-home .entry-content{
-            max-height: 200px;
-            transition: max-height 0.25s ease-in;
+          .fa-bookmark{
+            color:$colorprincipal;
+            text-shadow: 1px 1px 2px $gris-claro;
+            font-size: 30px;
+            position: absolute;
+            right: 0;
+            top:-4px;
           }
+
+          // .wrap-article-home.hover .entry-content,
+          // &:hover .wrap-article-home .entry-content{
+          //   max-height: 200px;
+          //   transition: max-height 0.25s ease-in;
+          // }
 
           .wrap-article-home{
               display: block;
@@ -356,22 +402,44 @@
               .entry-content{
                 overflow: hidden;
                 max-height: 0;
-                transition: max-height 0.15s ease-out;
+                //transition: max-height 0.15s ease-out;
               }
-
 
           }
 
+          .wrap-article-home-text{
+            display: block;
+            padding: 15px;
+            background-color: $colorsecundario;
+            text-decoration: none;
+            color:white;
+          }
 
-          .entry-title {
 
-            margin-top: 0;
-            margin-bottom: 5px;
-            line-height: 1.2em;
 
-            a{
-              font-size: 1.2em;
-              color:white;
+          a {
+
+            color:white;
+            text-decoration: none;
+
+            .entry-title {
+
+              margin-top: 0;
+              margin-bottom: 12px;
+              line-height: 1.2em;
+              font-size: 24px;
+
+              // color : white;
+
+              // a{
+              //   font-size: 1.2em;
+              //   color:white;
+              // }
+
+            }
+
+            &:hover{
+              text-decoration: underline;
             }
 
           }
@@ -414,6 +482,8 @@
   }
 
 }
+
+
 
 //mailchimp
 #mc_embed_signup{

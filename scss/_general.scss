@@ -4,51 +4,109 @@ body{
   background-color:#F2F2F2;
 }
 
+h1{
+  font-size:2.4em;
+}
+
+h2{
+  font-size: 2.2em;
+}
+
+h3{
+  font-size: 2em;
+  margin:0;
+}
+
+h4{
+  font-size: 1.8em;
+  margin:0;
+}
+
+h5{
+  font-size: 1.6em;
+  margin:0;
+}
+
+h6{
+  font-size: 1.4em;
+  margin:0;
+}
+
 .container{
   max-width: 1240px;
   min-width: 360px;
 }
 
 a,a:visited {
-  color:$colorprincipal;
+  //color:$colorprincipal;
+  //color:$gris-oscuro;
+  color:darken($colorprincipal,10%);
 }
 
 .rounded{
   border-radius: 50%;
 }
 
+
 //blockquote
-blockquote {
-font-family: Georgia, serif;
-font-size: 1.2em;
-font-style: italic;
-margin: 0.25em 0;
-padding: 0.35em 40px;
-line-height: 1.45;
-position: relative;
+
+blockquote, q{
+  font-family:Georgia, serif;
+}
+
+blockquote{
+  position: relative;
+  margin: 0.25em 0;
+  padding-left: 10px;
 }
 
 blockquote:before {
-display: block;
-padding-left: 10px;
-content: "\201C";
-font-size: 80px;
-position: absolute;
-left: -20px;
-top: -20px;
-color: #7a7a7a;
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 40px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
 }
 
-blockquote cite {
-color: #999;
-font-size: 14px;
-display: block;
-margin-top: 5px;
+cite{
+  font-size: .9em;
+  color:$gris-claro;
 }
 
-blockquote cite:before {
-content: "\2014 \2009";
-}
+// blockquote {
+// font-family: Georgia, serif;
+// font-size: 1.2em;
+// font-style: italic;
+// margin: 0.25em 0;
+// padding: 0.35em 40px;
+// line-height: 1.45;
+// position: relative;
+// }
+
+// blockquote:before {
+// display: block;
+// padding-left: 10px;
+// content: "\201C";
+// font-size: 80px;
+// position: absolute;
+// left: -20px;
+// top: -20px;
+// color: #7a7a7a;
+// }
+//
+// blockquote cite {
+// color: #999;
+// font-size: 14px;
+// display: block;
+// margin-top: 5px;
+// }
+//
+// blockquote cite:before {
+// content: "\2014 \2009";
+// }
 
 //Fin blockquote
 
@@ -109,4 +167,16 @@ textarea{
 
 .widget{
   padding:15px;
+}
+
+//tables
+table{
+  width: 100%;
+  td, th{
+    border: 1px solid $gris-muyclaro;
+    padding:8px 6px;
+  }
+  th{
+    background-color: $gris-muyclaro;
+  }
 }
